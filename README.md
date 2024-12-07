@@ -1,3 +1,10 @@
-# recipes-analysis
+# title
 
-This is an edit
+## Introduction
+text
+---
+## Data Cleaning and Exploratory Data Analysis
+---
+## Framing a Prediction Problem
+## Baseline Model
+## Final Model
