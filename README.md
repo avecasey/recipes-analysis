@@ -19,12 +19,17 @@ To begin cleaning the data, we merged the recipes and ratings datasets together,
 | 412 broccoli casserole               | 306168 |        40 |            50969 |         6 |               9 |      1.19628e+06 |        5 |                5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 | 412 broccoli casserole               | 306168 |        40 |            50969 |         6 |               9 | 768828           |        5 |                5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 
+Next, we began exploratory data analysis, creating a histogram of the distribution of calories for recipes with fewer than 1000 calories. From the graph below, we can see that the distribution of calories is skewed to the right, and most recipes in this range have between 150 and 300 calories.
+
 <iframe
   src="assets/calories1.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+We then explored the relationship between calories and number of ingredients in the recipe, deciding to split recipes between those with less than 9 ingredients and those with 9 or more. From the boxplot below, we can see that the median number of calories for recipes with fewer than 9 ingredients is below the median number of calories for recipes in the other group, which implies that recipes with more ingredients tend to have more calories.
+
 <iframe
   src="assets/calories_ingredients.html"
   width="800"
