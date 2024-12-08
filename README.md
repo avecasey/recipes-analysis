@@ -22,7 +22,12 @@ text
   height="600"
   frameborder="0"
 ></iframe>
-
+<iframe
+  src="assets/calories_ingredients.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ---
 
