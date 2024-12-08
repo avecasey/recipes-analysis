@@ -105,7 +105,11 @@ This group by table shows us the average nutrition information, number of recipe
 |            1867 |           84.7381 |        11.045   |                 9.74879 |          4.81743 |            463.962 |             35.5865 |         76.7017 |         42.8956  |           35.4253 |                 44.4124 |                14.4649  |
 |             738 |           32.393  |        10.4187  |                 8.59485 |          4.77496 |            445.8   |             39.3008 |         59.1369 |         20.1125  |           32.5583 |                 53.8482 |                12.1084  |
 
+### Missing Value Imputation
+We did not fill in missing values, as we learned from changing ratings of 0 to null that these reviews probably did not have a rating. We did not use the ratings for our analysis, and this was the only column in the dataset that we used that had more than one missing value, so we dropped rows where they were missing values in the columns we were using and moved forward with our analysis.
+
 ---
+
 
 ## Framing a Prediction Problem
 We will be predicting the number of calories a recipe has based on the nutrition information. This is a regression problem. This is useful because it can allow for recipe contributors to estimate the calories in a recipe based on the nutrition information, and see which factors contribute most significantly to the number of calories. To evaluate the performance of this model, we will be using MSE (Mean Squared Error). 
