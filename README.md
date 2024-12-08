@@ -40,6 +40,8 @@ We then explored the relationship between calories and number of ingredients in 
   height="600"
   frameborder="0"
 ></iframe>
+We also explored the relationship between calories and the amount of time it took to complete the recipe as a categorical variable, splitting recipes into either a "less than 300 minutes" category, or a "more than 300 minutes" category. From the boxplot below, we can see that recipes that take over 300 minutes (5 hours) to complete tend to have more calories than recipes that take less than 5 hours to complete. This will be important later on for our prediction model.
+
 <iframe
   src="assets/calories_time1.html"
   width="800"
