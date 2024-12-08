@@ -1,5 +1,7 @@
 # Whisking Through Data for Scrumptious Calorie Predictions
 Authors: Souma Mitra (souma@umich.edu) and Abby VeCasey (avecasey@umich.edu)
+
+
 ## Introduction
 
 The "Recipes and Ratings" dataset contains thousands of recipes from food.com, each row representing a review of a particular recipe. Each recipe can have multiple reviews, and therefore multiple rows in the dataset. There are 219393 rows and 16 columns in our cleaned dataset. We will use this dataset to answer the question of how accurately we can predict the number of calories in a recipe given other recipe details, and which factors best predict the number of calories, and to answer this we will use columns “name”, which is the recipe name, “id”, which is a numerical id given to identity each recipe, “minutes”, which is the number of minutes it takes to complete each recipe, “contributor_id”, which is the unique id of the person who submitted the recipe, “n_steps”, which is the number of steps it takes to complete the recipe, “n_ingredients”, which is the number of ingredients in the recipe, “average_rating”, which is the average rating given to the recipe, and “calories”, “total fat”, “sugar”, “sodium”, “protein”, “saturated fat”, and “carbohydrates”, which are the amounts of each of these in the recipe. By understanding this dataframe and answering this question, we can provide recipe writers with a better understanding of how many calories are in each of their recipes without having to calculate it.
@@ -8,6 +10,7 @@ The "Recipes and Ratings" dataset contains thousands of recipes from food.com, e
 
 ## Data Cleaning and Exploratory Data Analysis
 
+### Data Cleaning
 To begin cleaning the data, we merged the recipes and ratings datasets together, as the dataset suggested. We then changed all ratings of 0 to be np.nan, which makes sense because ratings usually only go from 1-5, so recipes with ratings of 0 indicate that there is no rating. We then added an “average_rating” column, which is the average rating per recipe. Then, we decided to split the “nutrition” column into separate columns for each nutrition statistic, for example “calories” and “total fat”. Doing this allowed us to use these new variables for our analysis, and to find new relationships between variables that we could not have previously investigated. Then, we had to convert each of these new columns from type “object” to type “float”, because these are numerical values, and we needed them to be represented this way to proceed with our analysis of their relationships with other variables. Doing this allowed us to be able to visualize these variables with charts like scatter plots and histograms. Finally, we dropped columns unnecessary for our analysis, including “recipe_id” because it was a duplicate of “id”, “date submitted”, “'steps”, “description”, “ingredients”, “tags”, and “review”. Below is a visual of the first 5 rows of our cleaned dataset.
 
 
@@ -19,6 +22,7 @@ To begin cleaning the data, we merged the recipes and ratings datasets together,
 | 412 broccoli casserole               | 306168 |        40 |            50969 |         6 |               9 |      1.19628e+06 |        5 |                5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 | 412 broccoli casserole               | 306168 |        40 |            50969 |         6 |               9 | 768828           |        5 |                5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 
+### Univariate Analysis
 Next, we began exploratory data analysis, creating a histogram of the distribution of calories for recipes with fewer than 1000 calories. From the graph below, we can see that the distribution of calories is skewed to the right, and most recipes in this range have between 150 and 300 calories.
 
 <iframe
@@ -28,6 +32,7 @@ Next, we began exploratory data analysis, creating a histogram of the distributi
   frameborder="0"
 ></iframe>
 
+### Bivariate Analysis
 We then explored the relationship between calories and number of ingredients in the recipe, deciding to split recipes between those with less than 9 ingredients and those with 9 or more. From the boxplot below, we can see that the median number of calories for recipes with fewer than 9 ingredients is below the median number of calories for recipes in the other group, which implies that recipes with more ingredients tend to have more calories.
 
 <iframe
@@ -42,7 +47,9 @@ We then explored the relationship between calories and number of ingredients in 
   height="600"
   frameborder="0"
 ></iframe>
-This group by table shows us the average nutrition information, number of recipes, and average recipe information per recipe contributor, of the top 50 contributors. This information is important to understand the nature of recipies that the top 50 recipe authors post. 
+
+### Interesting Aggregates
+This group by table shows us the average nutrition information, number of recipes, and average recipe information per recipe contributor, of the top 50 contributors. This information is important to understand the nature of recipes that the top 50 recipe authors post, and to determine which authors may be the most successful.
 
 |   total_recipes |   average_minutes |   average_steps |   average_n_ingredients |   average_rating |   average_calories |   average_total_fat |   average_sugar |   average_sodium |   average_protein |   average_saturated_fat |   average_carbohydrates |
 |-----------------|-------------------|-----------------|-------------------------|------------------|--------------------|---------------------|-----------------|------------------|-------------------|-------------------------|-------------------------|
