@@ -31,7 +31,6 @@ Next, we began exploratory data analysis, creating a histogram of the distributi
   height="600"
   frameborder="0"
 ></iframe>
-
 ### Bivariate Analysis
 We then explored the relationship between calories and number of ingredients in the recipe, deciding to split recipes between those with less than 9 ingredients and those with 9 or more. From the boxplot below, we can see that the median number of calories for recipes with fewer than 9 ingredients is below the median number of calories for recipes in the other group, which implies that recipes with more ingredients tend to have more calories.
 
